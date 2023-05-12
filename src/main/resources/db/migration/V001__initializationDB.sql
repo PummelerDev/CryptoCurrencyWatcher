@@ -6,7 +6,20 @@ create table if not exists cryptocurrency
     symbol varchar(20)    not null
     constraint cryptocurrency_pk2
     unique,
-    price  numeric(12, 6) default 0 not null
+    name varchar(50),
+    nameid varchar(50),
+    rank integer,
+    price_usd varchar(50),
+    percent_change_24h varchar(50),
+    percent_change_1h varchar(50),
+    percent_change_7d varchar(50),
+    market_cap_usd varchar(50),
+    volume24 varchar(50),
+    volume24_native varchar(50),
+    csupply varchar(50),
+    price_btc varchar(50),
+    tsupply varchar(50),
+    msupply varchar(50)
     );
 
 alter table cryptocurrency
