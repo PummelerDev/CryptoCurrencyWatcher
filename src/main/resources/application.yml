@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/CryptoDB
+    username: postgres
+    password: root
+  flyway:
+    enabled: true
+    schemas: public
+    default-schema: public
+    validate-on-migrate: true
