@@ -12,12 +12,12 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "cryptocurrency")
+@Table(name = "cryptocurrencies")
 public class Cryptocurrency {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cryptocurrency_seq")
-    @SequenceGenerator(name = "cryptocurrency_seq", sequenceName = "cryptocurrency_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cryptocurrencies_seq")
+    @SequenceGenerator(name = "cryptocurrencies_seq", sequenceName = "cryptocurrencies_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "symbol")

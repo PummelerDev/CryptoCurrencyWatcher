@@ -1,10 +1,10 @@
-create table if not exists cryptocurrency
+create table if not exists cryptocurrencies
 (
     id     bigserial
-    constraint cryptocurrency_pk
+    constraint cryptocurrencies_pk
     primary key,
     symbol varchar(20)    not null
-    constraint cryptocurrency_pk2
+    constraint cryptocurrencies_pk2
     unique,
     name varchar(50),
     nameid varchar(50),
@@ -22,20 +22,22 @@ create table if not exists cryptocurrency
     msupply varchar(50)
     );
 
-alter table cryptocurrency
+alter table cryptocurrencies
     owner to postgres;
 
-create table if not exists "user"
+create table if not exists "users"
 (
     id                bigserial
-    constraint user_pk
+    constraint users_pk
     primary key,
     username          varchar(50)    not null,
     cryptocurrency_id bigint         not null
-    constraint user_cryptocurrency_id_fk
-    references cryptocurrency,
-    starting_price    numeric(12, 6) not null
+    constraint user_cryptocurrencies_id_fk
+    references cryptocurrencies,
+    starting_price    varchar(50) not null,
+    constraint users_pk2
+    unique (cryptocurrency_id, username)
     );
 
-alter table "user"
+alter table "users"
     owner to postgres;
