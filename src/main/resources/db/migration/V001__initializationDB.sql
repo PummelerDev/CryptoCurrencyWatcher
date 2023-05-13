@@ -9,7 +9,7 @@ create table if not exists cryptocurrencies
     name varchar(50),
     nameid varchar(50),
     rank integer,
-    price_usd varchar(50),
+    price_usd numeric(13,6),
     percent_change_24h varchar(50),
     percent_change_1h varchar(50),
     percent_change_7d varchar(50),
@@ -34,7 +34,7 @@ create table if not exists "users"
     cryptocurrency_id bigint         not null
     constraint user_cryptocurrencies_id_fk
     references cryptocurrencies,
-    starting_price    varchar(50) not null,
+    starting_price    numeric(13,6) not null,
     constraint users_pk2
     unique (cryptocurrency_id, username)
     );

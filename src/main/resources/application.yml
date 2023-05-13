@@ -9,3 +9,8 @@ spring:
     schemas: public
     default-schema: public
     validate-on-migrate: true
+logging:
+  level:
+    root: info
+  file:
+    path: logs

@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tech.idftechnology.cryptocurrencywatcher.domain.User;
-import tech.idftechnology.cryptocurrencywatcher.domain.dto.UserDtoNotify;
+import tech.idftechnology.cryptocurrencywatcher.domain.dto.UserDtoRegistration;
 import tech.idftechnology.cryptocurrencywatcher.service.UserService;
 
 @RestController
@@ -23,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping("/notify")
-    public ResponseEntity<HttpStatus> notify(@RequestBody UserDtoNotify notify){
+    public ResponseEntity<HttpStatus> notify(@RequestBody UserDtoRegistration notify){
         userService.userRegistration(notify);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

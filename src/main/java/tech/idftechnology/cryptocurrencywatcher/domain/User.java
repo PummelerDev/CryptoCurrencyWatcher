@@ -1,12 +1,17 @@
 package tech.idftechnology.cryptocurrencywatcher.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -21,16 +26,17 @@ public class User {
     @Column(name = "username")
     private String username;
 
-    @Column(name = "cryptocurrency_id")
-    private Long cryptocurrencyId;
+    @OneToOne
+    @JoinColumn(name = "cryptocurrency_id", nullable = false)
+    private Cryptocurrency cryptocurrency;
 
     @Column(name = "starting_price")
-    private String startingPrice;
+    private BigDecimal startingPrice;
 
-    public User(Long id, String username, Long cryptocurrencyId, String startingPrice) {
+    public User(Long id, String username, Cryptocurrency cryptocurrency, BigDecimal startingPrice) {
         this.id = id;
         this.username = username;
-        this.cryptocurrencyId = cryptocurrencyId;
+        this.cryptocurrency = cryptocurrency;
         this.startingPrice = startingPrice;
     }
 
@@ -42,7 +48,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", cryptocurrencyId=" + cryptocurrencyId +
+                ", cryptocurrency=" + cryptocurrency +
                 ", startingPrice='" + startingPrice + '\'' +
                 '}';
     }
@@ -52,12 +58,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(cryptocurrencyId, user.cryptocurrencyId) && Objects.equals(startingPrice, user.startingPrice);
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(cryptocurrency, user.cryptocurrency) && Objects.equals(startingPrice, user.startingPrice);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, cryptocurrencyId, startingPrice);
+        return Objects.hash(id, username, cryptocurrency, startingPrice);
     }
 
     public Long getId() {
@@ -76,19 +82,19 @@ public class User {
         this.username = username;
     }
 
-    public Long getCryptocurrencyId() {
-        return cryptocurrencyId;
+    public Cryptocurrency getCryptocurrency() {
+        return cryptocurrency;
     }
 
-    public void setCryptocurrencyId(Long cryptocurrencyId) {
-        this.cryptocurrencyId = cryptocurrencyId;
+    public void setCryptocurrency(Cryptocurrency cryptocurrency) {
+        this.cryptocurrency = cryptocurrency;
     }
 
-    public String getStartingPrice() {
+    public BigDecimal getStartingPrice() {
         return startingPrice;
     }
 
-    public void setStartingPrice(String startingPrice) {
+    public void setStartingPrice(BigDecimal startingPrice) {
         this.startingPrice = startingPrice;
     }
 }

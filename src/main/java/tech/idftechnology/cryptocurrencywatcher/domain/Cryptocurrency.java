@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -34,7 +35,7 @@ public class Cryptocurrency {
 
     @Column(name = "price_usd")
     @JsonSetter(value = "price_usd")
-    private String priceUsd;
+    private BigDecimal priceUsd;
 
     @Column(name = "percent_change_24h")
     @JsonSetter(value = "percent_change_24h")
@@ -75,7 +76,7 @@ public class Cryptocurrency {
     public Cryptocurrency() {
     }
 
-    public Cryptocurrency(Long id, String symbol, String name, String nameid, Integer rank, String priceUsd, String percentChange24h, String percentChange1h, String percentChange7d, String marketCapUsd, String volume24, String volume24native, String csupply, String priceBtc, String tsupply, String msupply) {
+    public Cryptocurrency(Long id, String symbol, String name, String nameid, Integer rank, BigDecimal priceUsd, String percentChange24h, String percentChange1h, String percentChange7d, String marketCapUsd, String volume24, String volume24native, String csupply, String priceBtc, String tsupply, String msupply) {
         this.id = id;
         this.symbol = symbol;
         this.name = name;
@@ -169,11 +170,11 @@ public class Cryptocurrency {
         this.rank = rank;
     }
 
-    public String getPriceUsd() {
+    public BigDecimal getPriceUsd() {
         return priceUsd;
     }
 
-    public void setPriceUsd(String priceUsd) {
+    public void setPriceUsd(BigDecimal priceUsd) {
         this.priceUsd = priceUsd;
     }
 
