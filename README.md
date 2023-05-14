@@ -13,7 +13,7 @@ The server works with PostgreSQL. The database has 3 tables. Cryptocurencies - s
 
 
 # User capabilities
-___
+
 Available endpoints:
 
 "GET http://localhost:8080/cryptocurrency" – gets available cryptocurrencies for tracking with current price.
