@@ -29,12 +29,13 @@ public class UserController {
     }
 
     @PostMapping("/notify")
-    public ResponseEntity<HttpStatus> notify(@RequestBody @Valid UserDtoRegistration notify, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
+    public ResponseEntity<HttpStatus> notify(@RequestBody @Valid UserDtoRegistration notify, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             throw new ValidationException(bindingResult.toString());
         }
         cryptocurrencyService.getPrice(notify.getSymbol());
         userService.userRegistration(notify);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
 }

@@ -1,7 +1,5 @@
 package tech.idftechnology.cryptocurrencywatcher.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -58,7 +56,9 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(cryptocurrency, user.cryptocurrency) && Objects.equals(startingPrice, user.startingPrice);
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username)
+                && Objects.equals(cryptocurrency, user.cryptocurrency)
+                && Objects.equals(startingPrice, user.startingPrice);
     }
 
     @Override
@@ -97,4 +97,5 @@ public class User {
     public void setStartingPrice(BigDecimal startingPrice) {
         this.startingPrice = startingPrice;
     }
+
 }

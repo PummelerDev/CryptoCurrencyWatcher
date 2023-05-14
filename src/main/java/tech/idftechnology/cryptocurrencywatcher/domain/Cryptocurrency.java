@@ -76,7 +76,10 @@ public class Cryptocurrency {
     public Cryptocurrency() {
     }
 
-    public Cryptocurrency(Long id, String symbol, String name, String nameid, Integer rank, BigDecimal priceUsd, String percentChange24h, String percentChange1h, String percentChange7d, String marketCapUsd, String volume24, String volume24native, String csupply, String priceBtc, String tsupply, String msupply) {
+    public Cryptocurrency(Long id, String symbol, String name, String nameid, Integer rank,
+                          BigDecimal priceUsd, String percentChange24h, String percentChange1h,
+                          String percentChange7d, String marketCapUsd, String volume24, String volume24native,
+                          String csupply, String priceBtc, String tsupply, String msupply) {
         this.id = id;
         this.symbol = symbol;
         this.name = name;
@@ -100,12 +103,22 @@ public class Cryptocurrency {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cryptocurrency that = (Cryptocurrency) o;
-        return Objects.equals(id, that.id) && Objects.equals(symbol, that.symbol) && Objects.equals(name, that.name) && Objects.equals(nameid, that.nameid) && Objects.equals(rank, that.rank) && Objects.equals(priceUsd, that.priceUsd) && Objects.equals(percentChange24h, that.percentChange24h) && Objects.equals(percentChange1h, that.percentChange1h) && Objects.equals(percentChange7d, that.percentChange7d) && Objects.equals(marketCapUsd, that.marketCapUsd) && Objects.equals(volume24, that.volume24) && Objects.equals(volume24native, that.volume24native) && Objects.equals(csupply, that.csupply) && Objects.equals(priceBtc, that.priceBtc) && Objects.equals(tsupply, that.tsupply) && Objects.equals(msupply, that.msupply);
+        return Objects.equals(id, that.id) && Objects.equals(symbol, that.symbol)
+                && Objects.equals(name, that.name) && Objects.equals(nameid, that.nameid)
+                && Objects.equals(rank, that.rank) && Objects.equals(priceUsd, that.priceUsd)
+                && Objects.equals(percentChange24h, that.percentChange24h)
+                && Objects.equals(percentChange1h, that.percentChange1h)
+                && Objects.equals(percentChange7d, that.percentChange7d)
+                && Objects.equals(marketCapUsd, that.marketCapUsd) && Objects.equals(volume24, that.volume24)
+                && Objects.equals(volume24native, that.volume24native) && Objects.equals(csupply, that.csupply)
+                && Objects.equals(priceBtc, that.priceBtc) && Objects.equals(tsupply, that.tsupply)
+                && Objects.equals(msupply, that.msupply);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, symbol, name, nameid, rank, priceUsd, percentChange24h, percentChange1h, percentChange7d, marketCapUsd, volume24, volume24native, csupply, priceBtc, tsupply, msupply);
+        return Objects.hash(id, symbol, name, nameid, rank, priceUsd, percentChange24h, percentChange1h,
+                percentChange7d, marketCapUsd, volume24, volume24native, csupply, priceBtc, tsupply, msupply);
     }
 
     @Override
@@ -257,4 +270,5 @@ public class Cryptocurrency {
     public void setMsupply(String msupply) {
         this.msupply = msupply;
     }
+
 }

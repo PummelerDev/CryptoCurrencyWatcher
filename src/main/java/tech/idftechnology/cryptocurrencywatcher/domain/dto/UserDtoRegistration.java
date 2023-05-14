@@ -62,4 +62,5 @@ public class UserDtoRegistration {
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
+
 }

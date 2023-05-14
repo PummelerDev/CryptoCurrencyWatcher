@@ -37,7 +37,9 @@ public class UserDtoNotify {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserDtoNotify that = (UserDtoNotify) o;
-        return Objects.equals(id, that.id) && Objects.equals(username, that.username) && Objects.equals(symbol, that.symbol) && Objects.equals(startingPrise, that.startingPrise) && Objects.equals(priceUsd, that.priceUsd);
+        return Objects.equals(id, that.id) && Objects.equals(username, that.username)
+                && Objects.equals(symbol, that.symbol) && Objects.equals(startingPrise, that.startingPrise)
+                && Objects.equals(priceUsd, that.priceUsd);
     }
 
     @Override
@@ -84,4 +86,5 @@ public class UserDtoNotify {
     public void setPriceUsd(BigDecimal priceUsd) {
         this.priceUsd = priceUsd;
     }
+
 }

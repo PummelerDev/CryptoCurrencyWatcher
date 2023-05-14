@@ -14,3 +14,5 @@ logging:
     root: info
   file:
     path: logs
+CoinLoreApi:
+  URL: "https://api.coinlore.net/api/ticker/?id=90,80,48543"

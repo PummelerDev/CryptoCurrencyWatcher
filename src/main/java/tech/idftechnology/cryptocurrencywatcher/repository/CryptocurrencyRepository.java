@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface CryptocurrencyRepository extends CrudRepository<Cryptocurrency, Long> {
 
     Optional<Cryptocurrency> findBySymbol(String symbol);
+
 }

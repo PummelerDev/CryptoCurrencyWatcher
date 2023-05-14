@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.validation.ValidationException;
+import java.io.IOException;
 
 @ControllerAdvice
 public class ExceptionHandlerImplementation {
@@ -28,7 +29,13 @@ public class ExceptionHandlerImplementation {
 
     @ExceptionHandler(ValidationException.class)
     public ResponseEntity<HttpStatus> exceptionValidation(ValidationException e) {
-        logger.error(e.getMessage(),e);
+        logger.error(e.getMessage(), e);
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
+
+    @ExceptionHandler(IOException.class)
+    public void exceptionIO(IOException e) {
+        logger.error(e.getMessage(), e);
+    }
+
 }

@@ -1,7 +1,9 @@
 package tech.idftechnology.cryptocurrencywatcher.exceptions;
 
 public class UserException extends RuntimeException {
+
     public UserException() {
+        super();
     }
 
     public UserException(String message) {
@@ -19,4 +21,5 @@ public class UserException extends RuntimeException {
     protected UserException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
+
 }

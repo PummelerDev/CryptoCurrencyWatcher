@@ -1,7 +1,9 @@
 package tech.idftechnology.cryptocurrencywatcher.exceptions;
 
-public class CryptocurrencyNotFoundException extends RuntimeException{
+public class CryptocurrencyNotFoundException extends RuntimeException {
+
     public CryptocurrencyNotFoundException() {
+        super();
     }
 
     public CryptocurrencyNotFoundException(String message) {
@@ -16,7 +18,9 @@ public class CryptocurrencyNotFoundException extends RuntimeException{
         super(cause);
     }
 
-    protected CryptocurrencyNotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    protected CryptocurrencyNotFoundException(String message, Throwable cause,
+                                              boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
+
 }

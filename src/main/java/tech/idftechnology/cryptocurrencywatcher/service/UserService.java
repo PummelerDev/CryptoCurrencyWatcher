@@ -18,6 +18,7 @@ public class UserService {
     }
 
     public User userRegistration(UserDtoRegistration notify) {
-       return userRepository.registration(notify).orElseThrow(()-> new UserException("User wasn't created!"));
+        return userRepository.registration(notify).orElseThrow(() -> new UserException("User wasn't created!"));
     }
+
 }

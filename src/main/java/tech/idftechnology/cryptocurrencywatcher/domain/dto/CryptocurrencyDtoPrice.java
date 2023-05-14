@@ -52,4 +52,5 @@ public class CryptocurrencyDtoPrice {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
 }
