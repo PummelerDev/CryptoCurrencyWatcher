@@ -1,5 +1,6 @@
 package tech.idftechnology.cryptocurrencywatcher.exceptions;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,12 @@ public class ExceptionHandlerImplementation {
     @ExceptionHandler(IOException.class)
     public void exceptionIO(IOException e) {
         logger.error(e.getMessage(), e);
+    }
+
+    @ExceptionHandler(JsonParseException.class)
+    public ResponseEntity<HttpStatus> exceptionJsonParse (JsonParseException e){
+        logger.error(e.getMessage(), e);
+        return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
 }

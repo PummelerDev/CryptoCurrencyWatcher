@@ -35,7 +35,7 @@ public class CryptocurrencyService {
         Cryptocurrency cryptocurrency =
                 cryptocurrencyRepository.findBySymbol(symbol).orElseThrow(
                         () -> new CryptocurrencyNotFoundException(
-                                "Cryptocurrency with symbol \"" + symbol + "\" not found!"));
+                                "Cryptocurrency with symbol \'" + symbol + "\' not found!"));
         return CryptocurrencyMapper.mapCryptocurrencyToCryptocurrencyDtoPrice(cryptocurrency);
     }
 
