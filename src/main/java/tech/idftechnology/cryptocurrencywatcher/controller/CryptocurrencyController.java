@@ -1,6 +1,6 @@
 package tech.idftechnology.cryptocurrencywatcher.controller;
 
-import tech.idftechnology.cryptocurrencywatcher.domain.Cryptocurrency;
+import tech.idftechnology.cryptocurrencywatcher.domain.dto.CryptocurrencyDtoPrice;
 import tech.idftechnology.cryptocurrencywatcher.service.CryptocurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,14 +24,14 @@ public class CryptocurrencyController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Cryptocurrency>> getAllCrypts() {
-        List<Cryptocurrency> cryptocurrencies = cryptocurrencyService.getAllCrypts();
-        return new ResponseEntity<>(cryptocurrencies, HttpStatus.OK);
+    public ResponseEntity<List<CryptocurrencyDtoPrice>> getAllCrypts() {
+        List<CryptocurrencyDtoPrice> priceList = cryptocurrencyService.getAllCrypts();
+        return new ResponseEntity<>(priceList, HttpStatus.OK);
     }
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<Cryptocurrency> getPrice(@PathVariable String symbol){
-        Cryptocurrency cryptocurrency = cryptocurrencyService.getPrice(symbol);
-        return new ResponseEntity<>(cryptocurrency, HttpStatus.OK);
+    public ResponseEntity<CryptocurrencyDtoPrice> getPrice(@PathVariable String symbol) {
+        CryptocurrencyDtoPrice price = cryptocurrencyService.getPrice(symbol);
+        return new ResponseEntity<>(price, HttpStatus.OK);
     }
 }
