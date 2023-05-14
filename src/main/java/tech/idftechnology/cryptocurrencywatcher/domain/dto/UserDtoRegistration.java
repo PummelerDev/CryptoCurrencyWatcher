@@ -1,9 +1,21 @@
 package tech.idftechnology.cryptocurrencywatcher.domain.dto;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 public class UserDtoRegistration {
+
+    @NotBlank
+    @Length(max = 50)
+    @Pattern(regexp = "[A-z-_]+")
     private String username;
+
+    @NotBlank
+    @Length(max = 20)
+    @Pattern(regexp = "[A-Z]+")
     private String symbol;
 
     public UserDtoRegistration(String username, String symbol) {
