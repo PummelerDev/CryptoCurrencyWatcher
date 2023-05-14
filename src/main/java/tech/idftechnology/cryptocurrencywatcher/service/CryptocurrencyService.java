@@ -38,4 +38,5 @@ public class CryptocurrencyService {
                                 "Cryptocurrency with symbol \"" + symbol + "\" not found!"));
         return CryptocurrencyMapper.mapCryptocurrencyToCryptocurrencyDtoPrice(cryptocurrency);
     }
+
 }

@@ -34,4 +34,5 @@ public class CryptocurrencyController {
         CryptocurrencyDtoPrice price = cryptocurrencyService.getPrice(symbol);
         return new ResponseEntity<>(price, HttpStatus.OK);
     }
+
 }

@@ -11,4 +11,5 @@ public class CryptocurrencyMapper {
         price.setSymbol(cryptocurrency.getSymbol());
         return price;
     }
+
 }
