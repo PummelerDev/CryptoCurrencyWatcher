@@ -21,10 +21,11 @@ Available endpoints:
 "GET http://localhost:8080/cryptocurrency/{cryptocurrencySymbol}" – gets the selected cryptocurrency with a price.
 
 # Registration
-To register a user, go to "POST http://localhost:8080/user/notify". It is also necessary to send json:( 
+To register a user, go to "POST http://localhost:8080/user/notify". It is also necessary to send json:
+```json
 {
   "username": "testName",
   "symbol": "cryptocurrencySymbol"
-} ).
-
+}
+```
 Warning: if the user is already tracking the cryptocurrency, when requested again, the starting price will change to the current one.
